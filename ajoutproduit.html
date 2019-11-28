@@ -1,0 +1,77 @@
+<html>
+    <head>
+
+    </head>
+    <body>  
+        
+            <table>
+                    <form method="POST" action="ajoutproduit.php"  >
+                    <caption>Ajouter Produit</caption>
+                    <tr>
+                        <td>ID</td>
+                        <td>
+                            <input type="text" id="id" name="id"><br>
+                        </td>
+                    </tr> 
+                    <tr>
+                        
+                            <td id="categorie" >Catégorie :</td>
+                        <td>
+                            <input type="radio" name="categorie" value="collier">Collier <br>
+                            <input type="radio" name="categorie" value="bague">Bague <br>
+                            <input type="radio" name="categorie" value="bracelet">Bracelet <br>
+                            <input type="radio" name="categorie" value="boucles">Boucles d'oreilles <br>
+                        </td>
+                        
+                    </tr>                        
+                   
+                    
+                    <tr>
+                        <td>Prix</td>
+                        <td>                                
+                            <input type="number" id="prix" name="prix"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Disponible</td>
+                        <td>                                
+                            <input type="number" id="disponible" name="disponible"><br>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Image</td>
+                        <td>                                
+                            <input type="file" id="img" name="img" value="Choisir l'image"><br>
+                        </td>
+                    </tr>
+                    
+
+                    <tr>
+                        <td><input type="submit" name="ajouter" value="Envoyer" onclick="check()" ></td>
+                    </tr>
+
+                   
+                    <script src="check.js"></script>
+                    <script>
+                             $(document).ready(function(){
+                             $('#ajouter').click(function(){
+                                 var img_nom = $('#img').val();
+                                 if (img_nom = ''){
+                                     alert ("Veuillez saisir une image.");
+                                 }else{
+                                            var extension = $('#img').val().split('.').pop().toLowerCase();
+                                            if (jQuery.inArray(extension, ['png','jpg','jpeg']) == -1 ){
+                                                alert("Fichier image invalide");
+                                                $('#img').val();
+                                            }
+                                      }
+
+                             });
+                        });
+                    </script>
+                </form> 
+                </table>
+                
+    </body>
+</html>
