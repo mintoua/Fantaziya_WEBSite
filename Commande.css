@@ -1,0 +1,16 @@
+.forget-pass2:hover{
+    color: red;
+}
+.step-title2{
+transition: transform 1s;
+}
+.step-title2:hover{
+    color: black;
+    transform: scale(1.05);
+}
+#paiement{
+    display: none;
+}
+#informations{
+    display: none;
+}
