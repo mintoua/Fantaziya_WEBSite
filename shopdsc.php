@@ -273,17 +273,16 @@ $rows=mysqli_fetch_array($rslt);
                                         <p><span><?php echo $rows[0]; ?></span> Produits trouvés</p>
                                     </div>
                                     <!-- Sorting -->
-                                        
-                                            <select id="sortByselect" name="select" onchange="location = this.value;" >
+                                                
+                                    <select id="sortByselect" name="select" onchange="location = this.value;" >
 
-                                            <option value="shop.php">Prix: $ - $$</option>
                                             <option value="shopdsc.php">Prix: $$ - $</option>
+                                            <option value="shop.php">Prix: $ - $$</option>
                                                 <!--<option value="value">Prix: $ - $$</option>
                                                 <option value="value"> <a href="shopdsc.php">Prix: $$ - $</a> </option>-->
                                             </select>
                                             <input type="submit" class="d-none" value="" >
-
-                                     </div>
+                                </div>
                             </div>
                         </div>
 
@@ -304,7 +303,7 @@ if(!mysqli_select_db($con,'Fantaziya')){
 
 
 
-$sql = "SELECT * FROM `produit` ORDER BY prix ASC";
+$sql = "SELECT * FROM `produit` ORDER BY prix DESC";
 $result = mysqli_query($con,$sql);
 
 while ($row=mysqli_fetch_array($result)){

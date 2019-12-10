@@ -1,20 +1,3 @@
-
-<?php
-$con=mysqli_connect('localhost','root','');
-
-if(!$con){
-    echo 'Not connected to Database';
-}
-
-if(!mysqli_select_db($con,'Fantaziya')){
-    echo 'Database not connected';
-}
-$sql2="SELECT COUNT('categorie') from produit";
-$rslt=mysqli_query($con,$sql2);
-$rows=mysqli_fetch_array($rslt);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,19 +9,21 @@ $rows=mysqli_fetch_array($rslt);
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Fantaziya Accesoires</title>
+    <title>Fantaziya Accessoires</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Style CSS -->
-    <link rel="stylesheet" href="css/core-stylebijoux.css">
-    <link rel="stylesheet" href="stylebij.css">
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-    
     <!-- ##### Header Area Start ##### -->
     <header class="header_area">
-        <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between light left">
+        <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
@@ -57,7 +42,7 @@ $rows=mysqli_fetch_array($rslt);
                     <div class="classynav">
                         <ul>
                           <li><a href="index.html">Acceuil</a></li>
-                            <li class="megamenu-item"><a href="#">Bijoux</a>
+                            <li><a href="#">Bijoux</a>
                                 <div class="megamenu">
                                     <ul class="single-mega cn-col-4">
                                         <li class="title">Femme Collection</li>
@@ -76,7 +61,7 @@ $rows=mysqli_fetch_array($rslt);
                                         <img src="img/bg-img/bg-6.jpg" alt="">
                                     </div>
                                 </div>
-                            <span class="dd-trigger"></span><span class="dd-arrow"></span><span class="dd-trigger"></span><span class="dd-arrow"></span></li>
+                            </li>
 
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
@@ -87,17 +72,14 @@ $rows=mysqli_fetch_array($rslt);
             </nav>
 
             <!-- Header Meta Data -->
-           
             <div class="header-meta d-flex clearfix justify-content-end">
                 <!-- Search Area -->
                 <div class="search-area">
-                    <form method="post">
-                        <input type="search" name="search" id="headerSearch" placeholder="Recherche">
+                    <form action="#" method="post">
+                        <input type="search" name="search" id="headerSearch" placeholder="Type pour recherche">
                         <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
-                                            
                 </div>
-               
                 <!-- Favourite Area -->
                 <div class="favourite-area">
                     <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
@@ -197,171 +179,57 @@ $rows=mysqli_fetch_array($rslt);
     </div>
     <!-- ##### Right Side Cart End ##### -->
 
-    <!-- ##### Breadcumb Area Start ##### -->
-    <div class="breadcumb_area bg-img" style="background-image: url(../Fantaziya/img/IMG_1189.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="page-title text-center">
-                        <h2></h2>
-                    </div>
-                </div>
+    <!-- ##### Single Product Details Area Start ##### -->
+    <section class="single_product_details_area d-flex align-items-center">
+
+        <!-- Single Product Thumb -->
+        <div class="single_product_thumb clearfix">
+            <div class="product_thumbnail_slides owl-carousel">
+                <img src="img/product-img/product-big-1.jpg" alt="">
+                <img src="img/product-img/product-big-2.jpg" alt="">
+                <img src="img/product-img/product-big-3.jpg" alt="">
             </div>
         </div>
-    </div>
-    <!-- ##### Breadcumb Area End ##### -->
 
-    <!-- ##### Shop Grid Area Start ##### -->
-    <section class="shop_grid_area section-padding-80">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-4 col-lg-3">
-                    <div class="shop_sidebar_area">
+        <!-- Single Product Description -->
+        <div class="single_product_desc clearfix">
+            
+            <a href="cart.html">
+                <h2>One Shoulder Glitter Midi Dress</h2>
+            </a>
+            <p class="product-price"><span class="old-price">$65.00</span> $49.00</p>
+            <p class="product-desc">Mauris viverra cursus ante laoreet eleifend. Donec vel fringilla ante. Aenean finibus velit id urna vehicula, nec maximus est sollicitudin.</p>
 
-                        <!-- ##### Single Widget ##### -->
-                        <div class="widget catagory mb-50">
-                            <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">Catégories</h6>
-
-                            <!--  Catagories  -->
-                            <div class="catagories-menu">
-                                <ul id="menu-content2" class="menu-content collapse show">
-                                    <!-- Single Item -->
-                                    <li data-toggle="collapse" data-target="#clothing">
-                                        <ul class="sub-menu collapse show" id="clothing">
-                                            <li><a href="#">Tout Afficher</a></li>
-                                            <li><a href="#">Colliers</a></li>
-                                            <li><a href="#">Boucles d'oreilles</a></li>
-                                            <li><a href="#">Bracelets</a></li>
-                                            <li><a href="#">Bagues</a></li>
-                                        </ul>
-                                    </li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- ##### Single Widget ##### -->
-                        <div class="widget price mb-50">
-                            <!-- Widget Title -->
-                            <h6 class="widget-title mb-30">Filtrer par</h6>
-                            <!-- Widget Title 2 -->
-                            <p class="widget-title2 mb-30">Prix</p>
-
-                            <div class="widget-desc">
-                                <div class="slider-range">
-                                    <div data-min="10" data-max="200" data-unit="TND" class="slider-range-price ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" data-value-min="49" data-value-max="360" data-label-result="Range:">
-                                        <div class="ui-slider-range ui-widget-header ui-corner-all"></div>
-                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                        <span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0"></span>
-                                    </div>
-                                    <div class="range-price">Entre: TND10 - TND200</div>
-                                </div>
-                            </div>
-                        </div>
-                        
+            <!-- Form -->
+            <form class="cart-form clearfix" method="post">
+                <!-- Select Box -->
+                <div class="select-box d-flex mt-50 mb-30">
+                    <select name="select" id="productSize" class="mr-5">
+                        <option value="value">Size: XL</option>
+                        <option value="value">Size: X</option>
+                        <option value="value">Size: M</option>
+                        <option value="value">Size: S</option>
+                    </select>
+                    <select name="select" id="productColor">
+                        <option value="value">Color: Black</option>
+                        <option value="value">Color: White</option>
+                        <option value="value">Color: Red</option>
+                        <option value="value">Color: Purple</option>
+                    </select>
+                </div>
+                <!-- Cart & Favourite Box -->
+                <div class="cart-fav-box d-flex align-items-center">
+                    <!-- Cart -->
+                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Add to cart</button>
+                    <!-- Favourite -->
+                    <div class="product-favourite ml-4">
+                        <a href="#" class="favme fa fa-heart"></a>
                     </div>
                 </div>
-
-                <div class="col-12 col-md-8 col-lg-9">
-                    <div class="shop_grid_product_area">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="product-topbar d-flex align-items-center justify-content-between">
-                                    <!-- Total Products -->
-                                    <div class="total-products">
-                                        <p><span><?php echo $rows[0]; ?></span> Produits trouvés</p>
-                                    </div>
-                                    <!-- Sorting -->
-                                        
-                                            <select id="sortByselect" name="select" onchange="location = this.value;" >
-
-                                            <option value="shop.php">Prix: $ - $$</option>
-                                            <option value="shopdsc.php">Prix: $$ - $</option>
-                                                <!--<option value="value">Prix: $ - $$</option>
-                                                <option value="value"> <a href="shopdsc.php">Prix: $$ - $</a> </option>-->
-                                            </select>
-                                            <input type="submit" class="d-none" value="" >
-
-                                     </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            
-                            
-                        <?php
-
-$con=mysqli_connect('localhost','root','');
-
-if(!$con){
-    echo 'Not connected to Database';
-}
-
-if(!mysqli_select_db($con,'Fantaziya')){
-    echo 'Database not connected';
-}
-
-
-
-$sql = "SELECT * FROM `produit` ORDER BY prix ASC";
-$result = mysqli_query($con,$sql);
-
-while ($row=mysqli_fetch_array($result)){
-    ?>
-    <!-- Single Product -->
-    <div class="col-12 col-sm-6 col-lg-4">
-                                <div class="single-product-wrapper">
-                                    <!-- Product Image  -->
-                                    <div class="product-img">
-                                        <img src="../Fantaziya/img/<?php echo $row['img']; ?>" alt="">
-                                        <!-- Hover Thumb -->
-                                        <img class="hover-img" src="../Fantaziya/img/<?php echo $row['img']; ?>" alt="">
-
-                                        <!-- Favourite -->
-                                        <div class="product-favourite">
-                                            <a href="#" class="favme fa fa-heart"></a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Product Description -->
-                                    <div class="product-description">
-                                            <h6><?php echo $row['nom']; ?></h6>
-                                        </a>
-                                        <p class="product-price"><?php echo $row['prix']; ?> TND</p>
-
-                                        <!-- Hover Content -->
-                                        <div class="hover-content">
-                                            <!-- Add to Cart -->
-                                            <div class="add-to-cart-btn">
-                                                <a href="#" class="btn essence-btn">Ajouter au panier</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    <?php
-}
-
-
-    ?>
-
-
-
-
-                        
-                            
-                            
-
-                            
-                                 
-                    <!-- Pagination -->
-                    
-                </div>
-            </div>
+            </form>
         </div>
     </section>
-    <!-- ##### Shop Grid Area End ##### -->
+    <!-- ##### Single Product Details Area End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer_area clearfix">
@@ -372,12 +240,12 @@ while ($row=mysqli_fetch_array($result)){
                     <div class="single_widget_area d-flex mb-30">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                            <a href="#"><img src="img/core-img/" alt=""></a>
                         </div>
                         <!-- Footer Menu -->
                         <div class="footer_menu">
                             <ul>
-                                <li><a href="shop.html">Shop</a></li>
+                                <li><a href="shop.html">Boutique</a></li>
                                 <li><a href="blog.html">Blog</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
@@ -388,12 +256,10 @@ while ($row=mysqli_fetch_array($result)){
                 <div class="col-12 col-md-6">
                     <div class="single_widget_area mb-30">
                         <ul class="footer_widget_menu">
-                            <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Payment Options</a></li>
-                            <li><a href="#">Shipping and Delivery</a></li>
-                            <li><a href="#">Guides</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Options de paiement</a></li>
+                            <li><a href="#">Livraison</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Conditions d'utilisation</a></li>
                         </ul>
                     </div>
                 </div>
@@ -404,11 +270,11 @@ while ($row=mysqli_fetch_array($result)){
                 <div class="col-12 col-md-6">
                     <div class="single_widget_area">
                         <div class="footer_heading mb-30">
-                            <h6>Subscribe</h6>
+                            <h6>S'abonner</h6>
                         </div>
                         <div class="subscribtion_form">
                             <form action="#" method="post">
-                                <input type="email" name="mail" class="mail" placeholder="Your email here">
+                                <input type="email" name="mail" class="mail" placeholder="Votre Email">
                                 <button type="submit" class="submit"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
                             </form>
                         </div>
@@ -432,7 +298,7 @@ while ($row=mysqli_fetch_array($result)){
                 <div class="col-md-12 text-center">
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>, distributed by <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+    Copyright &copy; Tous les droits sont réservés
     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
