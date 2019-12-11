@@ -1,0 +1,28 @@
+form
+{
+	text-align: center;
+	margin: auto;
+width: 350px;
+height: 450px;
+padding: 18px 20px;
+border: 1px outset  #15243b;
+
+}
+
+input
+{
+	border:1.5px outset #15243b;
+	margin-bottom: 20px;
+	width: 250px;
+	height: 20px;
+}
+style
+{
+	width: 100%;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+caption
+{
+	font-size: 40px;
+}

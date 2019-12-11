@@ -1,64 +1,42 @@
-
-<?php
-class Commande
-{
-	private $totalPaiement;
-	private $etat;
-	private $dates;
-	private $login;
-	function __construct($totalPaiement,$etat,$dates,$login)
-	{
-		$this->setTotalPaiement($totalPaiement);
-		$this->setEtat($etat);
-		$this->setDates($dates);
-		$this->setLogin($login);
-
-
+<?PHP
+class Commande{
+    private $id_cmd;
+    private $date;
+	private $id_panier;
+    private $id_livreur;
+	
+	function __construct($id_cmd,$date,$id_panier,$id_livreur){
+		$this->id_cmd=$id_cmd;
+		$this->date=$date;
+        $this->id_panier=$id_panier;
+        $this->id_livreur=$id_livreur;
 	}
-
-
-	function getTotalPaiement()
-	{
-		return $this->totalPaiement;
+	function getIdCmd(){
+		return $this->id_cmd;
 	}
+	function setIdCmd($id_cmd){
+		$this->id_cmd=$id_cmd;
+	}
+	function getDate(){
+		return $this->date;
+	}
+	function setDate($date){
+		$this->date=$date;
+	}
+	function getIdPanier(){
+		return $this->id_panier;
+	}
+	function setIdPanier($d_panier){
+		$this->id_panier=$d_panier;
+    }
     
-   
-	function getEtat()
-	{
-		return $this->etat;
+    function getIdLivreur(){
+		return $this->id_livreur;
 	}
-
-	function getDates()
-	{
-		return $this->dates;
+	function setIdLivreur($id_livreur){
+		$this->id_livreur=$id_livreur;
 	}
-
-	function getLogin()
-	{
-		return $this->login;
-	}
-
-
-	function setTotalPaiement($total)
-	{
-		 $this->totalPaiement=$total;
-	}
-
-	function setEtat($Etat)
-	{
-		 $this->etat=$Etat;
-	}
-
-	function setDates($Dates)
-	{
-		 $this->dates=$Dates;
-	}
-
-	function setLogin($login)
-	{
-		 $this->login=$login;
-	}
-
+	
 }
 
-  ?>
+?>

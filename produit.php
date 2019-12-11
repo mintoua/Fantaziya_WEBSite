@@ -1,46 +1,50 @@
 <?PHP
 class produit{
-	private $id;
-    private $categorie;
-	private $prix;
-	private $disponible;
-	private $img;
-	function __construct($id,$categorie,$prix,$disponible,$img){
-		$this->id=$id;
-		$this->categorie=$categorie;
-        $this->prix=$prix;
-		$this->disponible=$disponible;
-		$this->img=$img;
+	private $id_pdt;
+	private $nom;
+	private $marque;
+    private $prix; 
+	
+	function __construct($id_pdt,$nom,$marque,$prix){
+        $this->id_pdt=$id_pdt;
+		$this->nom=$nom;
+		$this->marque=$marque;
+		$this->prix=$prix;
+
+	}
+	function getIdPdt(){
+		return $this->id_pdt;
+    }
+    
+	function setIdPdt($id_pdt){
+		$this->id_pdt=$id_pdt;
+    }
+
+	function getNom(){
+		return $this->nom;
+    }
+    
+	function setNom($nom){
+		$this->nom=$nom;
 	}
 	
-	function getId(){
-		return $this->id;
+	function getMarque(){
+		return $this->marque;
+    }
+    
+	function setMarque($marque){
+		$this->qte=$marque;
 	}
-	function getCategorie(){
-		return $this->categorie;
-	}
+    
 	function getPrix(){
 		return $this->prix;
-	}
-    function getDisponible(){
-		return $this->disponible;
-	}
-	function getImage(){
-		return $this->img;
-	}
-
-	function setCategorie($categorie){
-		$this->categorie=$categorie;
-	}
+    }
+    
 	function setPrix($prix){
 		$this->prix=$prix;
-	}
-	function setDisponible($disponible){
-		$this->disponible=$disponible;
-	}
-	function setImage($img){
-		$this->img=$img;
-	}
+    }
+
+	
 }
 
 ?>
