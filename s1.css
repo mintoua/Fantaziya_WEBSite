@@ -1,0 +1,42 @@
+
+.supp a {
+    background-color: red;
+  box-shadow: 0 5px 0 darkred;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.supp a:hover {
+  background-color: #ce0606;
+  cursor: pointer;
+}
+
+.supp a:active {
+  box-shadow: none;
+  top: 5px;
+}
+
+
+.add a {
+    background-color: green;
+  box-shadow: 0 5px 0 rgb(1, 76, 29);
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.add a:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+.add a:active {
+  box-shadow: none;
+  top: 5px;
+}
+
