@@ -1,89 +1,89 @@
+<?php 
+include ('C:\wamp64\www\projetweb\template\back\entities/fidelite.php');
+include "../core/fideliteF.php";
+$fideliteF = new fideliteF(); 
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+  <title></title>
 </head>
 <body>
-
-<?php
-
-include "../core/fideliteF.php";
-include "../entities/fidelite.php";
-
-
-if (isset($_GET['ref']))
-{
-	$fid=new fideliteF(); 
-	$result=$fid->recupererfidelite($_GET['ref']); 
-
-foreach ($result as $row) {
-
-	$ref=$row['ref'];
-	$id_client=$row['id_client'];
-	$pointt=$row['point'];
-	
-	# code...
-		}
-}
+  <?php
+    if (($_GET['ref'])){
+    $result=$fideliteF->recupererfidelite($_GET['ref']);
+    foreach($result as $row){
+      
 ?>
 
+  <form  class="form-container" method="post"> 
+   
+      
+      <th scope="col">ref</th>
+<th><input type="number" name="ref" value="<?php echo $row['ref'] ?>"></th>
+ <br>
 
-<caption>modification</caption>
+    
+
+    </tr>
+      <tr>
+      
+      <th scope="col">id_client</th>
+<th><input type="number" name="id_client" value="<?php echo $row['id_client'] ?>"></th>
+ 
+<br>
+    
+
+    </tr>
+      <tr>
+
+      <th scope="col">point</th>
+      <th><input type="number" name="point"value="<?php echo $row['point'] ?>"></th>
+    
+    </tr>
+
+    
+<br>
+     
 
 
+   
 
-<form method="POST">
+<br>
+      
 
-	<table>
-		
+     
+    
 
+    <tr>
+      <br>
+      <th><input type="submit" class="btn" name="modifier" value="modifier" >
+<input type="hidden" name="ref_ini" value="<?PHP echo $_GET['ref'];?>"></th>
 
-<tr>
-	<td>id client</td>
-	<td>
-		<input type="number" name="id_client" value="<?php echo $row['id_client'] ;?>">
-	</td>
-</tr>
-<tr>
-	<td>point</td>
-	<td>
-		<input type="number" name="point" value="<?php echo $point ;?>">
-	</td>
-</tr>
+    </tr>
+     
 
 
-<tr>
-
-	<td>
-		<input type="hidden" value="<?php echo $row ['ref'] ;?>" name="ref">
-		<input type="submit" name="modifier" value="modifier">
-	</td>
-</tr>
-
-<tr>
-	<td>
-		<input type="hidden" name="ref_ini" value="<?php echo $_GET['ref'] ;?>">
-	</td>
-</tr>
-
-	</table>
-
-	
+ 
+  
 
 </form>
+<?php } 
+
+if (isset($_POST['modifier'])){
+  $ref=$_POST['ref_ini'];
+  $id_client=$_POST['id_client'];
+  $point=$_POST['point'];
 
 
-<?php
-	if(isset($_POST['modifier']))
-	{
-		$fidee=new fidelite($ref,$_POST['id_client'],$_POST['point']); 
+$fidelite=new fidelite($ref,$id_client,$point);
+  $fideliteF->modifier($fidelite,$_POST['ref_ini']);
+}
 
-		$fid->modifierfidelite($promo,$_POST['ref_ini']);
-
-
-	}
-?>
-
-
+} ?>
 </body>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Newsletter</title>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+    />
+    <!-- CSS Files -->
+    <link
+      href="../assets/css/material-dashboard.css?v=2.1.0"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      language="javascript"
+      src="../Core/Form_Control.js"
+    ></script>
+    <style>
+        .fileUpload {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+        }
+        .fileUpload input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        </style>
+  </head>
+
+
+  <body class="dark-edition">
+     
+            <div class="container h-100">
+                <div class="row h-100 justify-content-center align-items-center">
+ <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+    <form method="POST" enctype="multipart/form-data" action="../core/Envoyer_Mail.php">
+      <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Newsletter</h4>
+              </div>
+              </div>
+              <div class="card-body">
+      <table style="margin:auto ; " class="table">
+        
+        <tbody>
+        <tr>
+           
+          <td colspan="2" >
+            <div style="display: block;">
+              <label>Titre</label>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" id="inputGroup-sizing-default" > </label>
+                  </div>
+                  <input type="text" class="form-control"  id="Title" name="Mail_Title" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                </div>
+              </div>
+             </td>
+        </tr>
+
+        <tr>
+         
+
+          <td colspan="2" >
+            <div style="display:block;"> 
+            <label > Body</label>
+            <div class="form-group">
+                
+                <textarea class="form-control"  id="Body" name="Mail_Body"  rows="3"></textarea>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+         
+
+        <tr>
+          <td>
+              <label class="btn btn-primary">
+                   <input name="Mail_File" type="file" >
+              </label> 
+          </td>
+          <td><button type="Submit" class="btn btn-primary fa-pull-right " style="text-align:right;">Envoyer</button></td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+ 
+  </body>
+</html>
