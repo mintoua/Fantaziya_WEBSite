@@ -5,7 +5,7 @@ error_reporting(0);
     $password="";
     $database="fantaziya";
     $connect=mysqli_connect($hostname,$username,$password,$database);
-    $query="SELECT * FROM reclamation";
+    $query="SELECT * FROM reclamation order by message";
     $result=mysqli_query($connect,$query);
     
     if(isset($_GET['id'])){   
@@ -61,7 +61,7 @@ error_reporting(0);
 
             <?php } ?>
             </table>
-            <a class="del_btn" href="delete2.php?message=<?php echo $row['message']?>"</a>sort
+            <a class="del_btn" href="delete.php?id=<?php echo $row['id']?>"</a>affiche
         </form>
     </body>
 </html>

@@ -1,18 +1,22 @@
+
 <?php
+if(isset($_POST["recherche"]))
+$recherche=$_POST["recherche"];
+
 error_reporting(0);
     $hostname="localhost";
     $username="root";
     $password="";
     $database="fantaziya";
     $connect=mysqli_connect($hostname,$username,$password,$database);
-    $query="SELECT * FROM reclamation";
+    $query="SELECT * FROM reclamation where  id=$recherche" ;
     $result=mysqli_query($connect,$query);
     
     if(isset($_GET['id'])){   
-    $query1="DELETE FROM reclamation where id='$_GET[id]'";
-    $result1=mysqli_query($connect,$query1);
-    header('location:delete.php');
-    }
+        $query1="DELETE FROM reclamation where id='$_GET[id]'";
+        $result1=mysqli_query($connect,$query1);
+        header('location:delete.php');
+        }
 ?>
 <html>
     <head>
@@ -32,12 +36,11 @@ error_reporting(0);
                 }
                 tr:nth-chile(even) {background-color:#f2f2f2}
             </style>
-            
     </head>
     <body>
     <form action="delete1.php" method="POST">
            <input type=text id="recherche" name="recherche">
-           <input type="submit" id="ss" value="RECHERCHER">
+           
         </form>
         <form action="">
             <table border="0">
@@ -57,11 +60,8 @@ error_reporting(0);
                 <td><?php  echo $row['message'];?></td>
                 <td><a class="del_btn" href="delete.php?id=<?php echo $row['id']?>"</a>delete</td>
             </tr>
-            
-
             <?php } ?>
             </table>
-            <a class="del_btn" href="delete2.php?message=<?php echo $row['message']?>"</a>sort
         </form>
     </body>
 </html>
